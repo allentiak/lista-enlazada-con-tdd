@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 public class NodoAssertJTest {
 
 	@Test
-	void debo_poder_crear_un_nodo() {
-		Nodo miNodo = new Nodo();
+	void debo_poder_crear_un_nodo_generico() {
+		Nodo<Object> miNodo = new Nodo<Object>();
 		assertThat(miNodo).isNotNull();
 	}
 
