@@ -1,25 +1,45 @@
 package ar.edu.untref.ayp2;
 
+import java.util.NoSuchElementException;
+
 public class ListaSimplementeEnlazada<CualquierTipo> {
 
-	public boolean estaVacia() {
-		return true;
+	private Nodo<CualquierTipo> cabeza = new Nodo<CualquierTipo>(null);
+	private int tamanio;
+
+	public ListaSimplementeEnlazada(CualquierTipo miElemento) {
+		cabeza.asigSigte(new Nodo<CualquierTipo>(miElemento));
+		asigTamanio(1);
+	}
+
+	public ListaSimplementeEnlazada() {
 	}
 
 	public int obtTamanio() {
-		return 0;
+		return tamanio;
 	}
 
-	public Object obtPrimerElemento() {
-		return null;
+	public void asigTamanio(int tamanio) {
+		this.tamanio = tamanio;
 	}
 
-	public Object obtUltimoElemento() {
-		return null;
+	public boolean estaVacia() {
+		return (cabeza.obtSigte() == null);
 	}
 
-	public Object obtElementoEnPosicion(int i) {
-		return null;
+	public CualquierTipo obtPrimerElemento() {
+		if (estaVacia()) {
+			throw new NoSuchElementException();
+		}
+		return cabeza.obtSigte().obtDato();
+	}
+
+	public CualquierTipo obtUltimoElemento() {
+		return obtPrimerElemento();
+	}
+
+	public CualquierTipo obtElementoEnPosicion(int i) {
+		return obtPrimerElemento();
 	}
 
 }
