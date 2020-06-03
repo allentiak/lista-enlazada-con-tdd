@@ -24,4 +24,16 @@ public class ListaSimplementeEnlazadaAssertJTest {
 		assertThat(miListaSimplementeEnlazadaVacia.obtElementoEnPosicion(0)).isNull();
 	}
 
+	@Test
+	void debo_poder_consultar_una_lista_generica_con_un_elemento() {
+		String miElemento = "Alfa";
+		ListaSimplementeEnlazada<String> miListaSimplementeEnlazadaConUnElemento = new ListaSimplementeEnlazada<String>(miElemento);
+		assertThat(miListaSimplementeEnlazadaConUnElemento).isNotNull();
+		assertThat(miListaSimplementeEnlazadaConUnElemento.estaVacia()).isFalse();
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtTamanio()).isEqualTo(1);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtPrimerElemento()).isEqualTo(miElemento);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtUltimoElemento()).isEqualTo(miElemento);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtElementoEnPosicion(0)).isEqualTo(miElemento);
+	}
+
 }
