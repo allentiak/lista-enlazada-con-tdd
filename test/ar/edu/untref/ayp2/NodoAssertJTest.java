@@ -11,6 +11,7 @@ public class NodoAssertJTest {
 		Nodo<Object> miNodoVacio = new Nodo<Object>();
 		assertThat(miNodoVacio).isNotNull();
 		assertThat(miNodoVacio.esValido()).isFalse();
+		assertThat(miNodoVacio.obtSigte()).isNull();
 	}
 
 	@Test
@@ -18,6 +19,15 @@ public class NodoAssertJTest {
 		Nodo<String> miNodoNoVacio = new Nodo<String>("Alfa");
 		assertThat(miNodoNoVacio.esValido()).isTrue();
 		assertThat(miNodoNoVacio.obtDato()).isEqualTo("Alfa");
+		assertThat(miNodoNoVacio.obtSigte()).isNull();
+	}
+
+	@Test
+	void debo_poder_encadenar_dos_nodos_no_vacios() {
+		Nodo<String> miPrimerNodoNoVacio = new Nodo<String>("Alfa");
+		Nodo<String> miSegundoNodoNoVacio = new Nodo<String>("Beta");
+		miPrimerNodoNoVacio.asigSigte(miSegundoNodoNoVacio);
+		assertThat(miPrimerNodoNoVacio.obtSigte()).isEqualTo(miSegundoNodoNoVacio);
 	}
 
 }
