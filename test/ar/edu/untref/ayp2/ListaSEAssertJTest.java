@@ -74,4 +74,20 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSimplementeEnlazadaConUnElemento.obtElementoEnPosicion(0)).isEqualTo(alfa);
 	}
 
+	@Test
+	void debo_poder_consultar_una_lista_generica_con_dos_elementos__el_segundo_instertado_al_principio() {
+		String miPrimerElemento = "Alfa";
+		String miSegundoElemento = "Beta";
+		ListaSE<String> miListaSEConDosElementos = new ListaSE<String>(miSegundoElemento);
+		assertThat(miListaSEConDosElementos.obtTamanio()).isEqualTo(1);
+		miListaSEConDosElementos.insertarAlPrincipio(miPrimerElemento);
+		assertThat(miListaSEConDosElementos).isNotNull();
+		assertThat(miListaSEConDosElementos.estaVacia()).isFalse();
+		assertThat(miListaSEConDosElementos.obtTamanio()).isEqualTo(2);
+		assertThat(miListaSEConDosElementos.obtPrimerElemento().equals(miPrimerElemento)).isTrue();
+		assertThat(miListaSEConDosElementos.obtUltimoElemento().equals(miSegundoElemento)).isTrue();
+		assertThat(miListaSEConDosElementos.obtElementoEnPosicion(0).equals(miPrimerElemento)).isTrue();
+		assertThat(miListaSEConDosElementos.obtElementoEnPosicion(1).equals(miPrimerElemento)).isTrue();
+	}
+
 }
