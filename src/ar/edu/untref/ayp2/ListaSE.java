@@ -57,8 +57,19 @@ public class ListaSE<CualquierTipo> {
 		return iterador.obtActual().obtDato();
 	}
 
-	public CualquierTipo obtElementoEnPosicion(int i) {
-		return obtPrimerElemento();
+	public CualquierTipo obtElementoEnPosicion(int posicionDeseada) {
+
+		if (estaVacia() || (obtTamanio() < posicionDeseada + 1)) {
+			throw new NoSuchElementException();
+		}
+
+		IteradorLSE<CualquierTipo> iterador = this.obtIterador();
+
+		for (int i = 0; i < posicionDeseada; i++) {
+			iterador.avanzar();
+		}
+
+		return iterador.obtActual().obtDato();
 	}
 
 	public void insertarAlPrincipio(CualquierTipo miNuevoElemento) {

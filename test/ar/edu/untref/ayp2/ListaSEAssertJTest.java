@@ -87,7 +87,7 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConDosElementos.obtPrimerElemento().equals(alfa)).isTrue();
 		assertThat(miListaSEConDosElementos.obtUltimoElemento().equals(beta)).isTrue();
 		assertThat(miListaSEConDosElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
-		assertThat(miListaSEConDosElementos.obtElementoEnPosicion(1).equals(alfa)).isTrue();
+		assertThat(miListaSEConDosElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
 	}
 
 }
