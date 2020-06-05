@@ -90,4 +90,31 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConDosElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
 	}
 
+	@Test
+	void debo_poder_consultar_una_lista_generica_con_cuatro_elementos() {
+		String alfa = "Alfa";
+		String beta = "Beta";
+		String gama = "Gama";
+		String delta = "Delta";
+		ListaSE<String> miListaSEConCuatroElementos = new ListaSE<String>();
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(0);
+		miListaSEConCuatroElementos.insertarAlPrincipio(alfa);
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(1);
+		miListaSEConCuatroElementos.insertarAlFinal(beta);
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(2);
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
+		miListaSEConCuatroElementos.insertarEnPosicion(delta, 2);
+		miListaSEConCuatroElementos.insertarEnPosicion(gama, 2);
+		assertThat(miListaSEConCuatroElementos).isNotNull();
+		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(4);
+		assertThat(miListaSEConCuatroElementos.obtPrimerElemento().equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(gama)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(2).equals(gama)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(3).equals(delta)).isTrue();
+	}
+
 }
