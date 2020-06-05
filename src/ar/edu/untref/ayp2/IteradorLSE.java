@@ -1,5 +1,7 @@
 package ar.edu.untref.ayp2;
 
+import java.util.NoSuchElementException;
+
 public class IteradorLSE<CualquierTipo> {
 
 	private NodoLSE<CualquierTipo> actual;
@@ -16,8 +18,14 @@ public class IteradorLSE<CualquierTipo> {
 		return (actual != null) ? actual.esValido() : false;
 	}
 
-	CualquierTipo obtActual() {
-		return esValido() ? actual.obtDato() : null;
+	NodoLSE<CualquierTipo> obtActual() {
+		return esValido() ? actual : null;
 	}
 
+	void avanzar() {
+		if (actual.obtSigte() == null) {
+			throw new NoSuchElementException();
+		}
+		this.actual = actual.obtSigte();
+	}
 }
