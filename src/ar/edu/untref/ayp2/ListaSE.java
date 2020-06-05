@@ -50,9 +50,7 @@ public class ListaSE<CualquierTipo> {
 
 		IteradorLSE<CualquierTipo> iterador = this.obtIterador();
 
-		while (iterador.esValido() && (iterador.obtActual().obtSigte() != null)) {
-			iterador.avanzar();
-		}
+		iterador.avanzarAlFinal();
 
 		return iterador.obtActual().obtDato();
 	}
@@ -65,9 +63,7 @@ public class ListaSE<CualquierTipo> {
 
 		IteradorLSE<CualquierTipo> iterador = this.obtIterador();
 
-		for (int i = 0; i < posicionDeseada; i++) {
-			iterador.avanzar();
-		}
+		iterador.avanzarAPosicion(posicionDeseada);
 
 		return iterador.obtActual().obtDato();
 	}

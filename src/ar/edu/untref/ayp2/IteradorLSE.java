@@ -23,9 +23,22 @@ public class IteradorLSE<CualquierTipo> {
 	}
 
 	void avanzar() {
-		if (actual.obtSigte() == null) {
+		if (!obtActual().esValido()) {
 			throw new NoSuchElementException();
 		}
 		this.actual = actual.obtSigte();
 	}
+
+	void avanzarAlFinal() {
+		while (obtActual().esValido() && actual.obtSigte() != null) {
+			this.avanzar();
+		}
+	}
+
+	void avanzarAPosicion(int posicionDeseada) {
+		for (int i = 0; i < posicionDeseada; i++) {
+			this.avanzar();
+		}
+	}
+
 }
