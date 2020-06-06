@@ -118,4 +118,62 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(3).equals(delta)).isTrue();
 	}
 
+	@Test
+	void debo_poder_achicar_una_lista_generica_con_cuatro_elementos() {
+		String alfa = "Alfa";
+		String beta = "Beta";
+		String gama = "Gama";
+		String delta = "Delta";
+		ListaSE<String> miListaSEConCuatroElementos = new ListaSE<String>();
+		miListaSEConCuatroElementos.insertarAlPrincipio(alfa);
+		miListaSEConCuatroElementos.insertarAlFinal(beta);
+		miListaSEConCuatroElementos.insertarEnPosicion(delta, 2);
+		miListaSEConCuatroElementos.insertarEnPosicion(gama, 2);
+		miListaSEConCuatroElementos.eliminarAlFinal();
+		assertThat(miListaSEConCuatroElementos).isNotNull();
+		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(3);
+		assertThat(miListaSEConCuatroElementos.obtPrimerElemento().equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(gama)).isTrue()
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(2).equals(gama)).isTrue();
+		miListaSEConCuatroElementos.eliminarEnPosicionl(1);
+		assertThat(miListaSEConCuatroElementos).isNotNull();
+		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(2);
+		assertThat(miListaSEConCuatroElementos.obtPrimerElemento().equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(gama)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(gama)).isTrue();
+		miListaSEConCuatroElementos.eliminarAlPrincipio();
+		assertThat(miListaSEConCuatroElementos).isNotNull();
+		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(1);
+		assertThat(miListaSEConCuatroElementos.obtPrimerElemento().equals(gama)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(gama)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(gama)).isTrue();
+		miListaSEConCuatroElementos.eliminarEnPosicionl(0);
+		assertThat(miListaSEConCuatroElementos).isNotNull();
+		assertThat(miListaSEConCuatroElementos.estaVacia()).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(0);
+
+		// NOTA - USUARIES de JUnit4: Este bloque de código que espera excepciones
+		// utiliza una sintaxis muy parecida a la de las assertions de JUnit5 puro,
+		// muy diferente a la de JUnit4 < 4.7.
+		//
+		// (Ver nota anterior en este mismo archivo.)
+		//
+		assertThat(catchThrowableOfType(() -> {
+			miListaSEConCuatroElementos.eliminarPrimerElemento();
+		}, NoSuchElementException.class)).isNotNull();
+		assertThat(catchThrowableOfType(() -> {
+			miListaSEConCuatroElementos.eliminarUltimoElemento();
+		}, NoSuchElementException.class)).isNotNull();
+		assertThat(catchThrowableOfType(() -> {
+			miListaSEConCuatroElementos.eliminarEnPosicion(0);
+		}, NoSuchElementException.class)).isNotNull();
+
+	}
+
 }
