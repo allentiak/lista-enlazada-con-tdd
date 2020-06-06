@@ -33,4 +33,8 @@ public class NodoLSE<CualquierTipo> {
 		return (obtDato() != null);
 	}
 
+	public void enlazarLuegoDe(NodoLSE<CualquierTipo> nodoAnterior) {
+		this.asigSigte(nodoAnterior.obtSigte());
+		nodoAnterior.asigSigte(this);
+	}
 }

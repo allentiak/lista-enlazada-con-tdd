@@ -70,17 +70,15 @@ public class ListaSE<CualquierTipo> {
 
 	public void insertarAlPrincipio(CualquierTipo miNuevoElemento) {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
-		miNuevoNodo.asigSigte(cabeza.obtSigte());
-		this.cabeza.asigSigte(miNuevoNodo);
+		miNuevoNodo.enlazarLuegoDe(cabeza);
 		asigTamanio(obtTamanio() + 1);
 	}
 
 	public void insertarAlFinal(CualquierTipo miNuevoElemento) {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
 		IteradorLSE<CualquierTipo> iterador = obtIterador();
-		iterador.avanzarAlFinal();
-		miNuevoNodo.asigSigte(iterador.obtActual().obtSigte());
-		iterador.obtActual().asigSigte(miNuevoNodo);
+		iterador.avanzarAPosicion(obtTamanio() - 2);
+		miNuevoNodo.enlazarLuegoDe(iterador.obtActual());
 		asigTamanio(obtTamanio() + 1);
 	}
 
@@ -88,8 +86,7 @@ public class ListaSE<CualquierTipo> {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
 		IteradorLSE<CualquierTipo> iterador = obtIterador();
 		iterador.avanzarAPosicion(posicionDeseada - 1);
-		miNuevoNodo.asigSigte(iterador.obtActual().obtSigte());
-		iterador.obtActual().asigSigte(miNuevoNodo);
+		miNuevoNodo.enlazarLuegoDe(iterador.obtActual());
 		asigTamanio(obtTamanio() + 1);
 	}
 
