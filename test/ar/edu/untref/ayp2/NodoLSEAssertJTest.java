@@ -42,4 +42,16 @@ public class NodoLSEAssertJTest {
 		assertThat(miTercerNodoNoVacio.obtSigte()).isNull();
 	}
 
+	@Test
+	void debo_poder_desenlazar_el_nodo_siguiente_al_actual() {
+		NodoLSE<String> miPrimerNodoNoVacio = new NodoLSE<String>("Alfa");
+		NodoLSE<String> miSegundoNodoNoVacio = new NodoLSE<String>("Beta");
+		NodoLSE<String> miTercerNodoNoVacio = new NodoLSE<String>("Gama");
+		miSegundoNodoNoVacio.enlazarLuegoDe(miPrimerNodoNoVacio);
+		miTercerNodoNoVacio.enlazarLuegoDe(miSegundoNodoNoVacio);
+		miPrimerNodoNoVacio.desenlazarSiguiente();
+		assertThat(miPrimerNodoNoVacio.obtSigte()).isEqualTo(miTercerNodoNoVacio);
+		assertThat(miTercerNodoNoVacio.obtSigte()).isNull();
+	}
+
 }
