@@ -75,4 +75,22 @@ public class ListaSE<CualquierTipo> {
 		asigTamanio(obtTamanio() + 1);
 	}
 
+	public void insertarAlFinal(CualquierTipo miNuevoElemento) {
+		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
+		IteradorLSE<CualquierTipo> iterador = obtIterador();
+		iterador.avanzarAlFinal();
+		miNuevoNodo.asigSigte(iterador.obtActual().obtSigte());
+		iterador.obtActual().asigSigte(miNuevoNodo);
+		asigTamanio(obtTamanio() + 1);
+	}
+
+	public void insertarEnPosicion(CualquierTipo miNuevoElemento, int posicionDeseada) {
+		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
+		IteradorLSE<CualquierTipo> iterador = obtIterador();
+		iterador.avanzarAPosicion(posicionDeseada - 1);
+		miNuevoNodo.asigSigte(iterador.obtActual().obtSigte());
+		iterador.obtActual().asigSigte(miNuevoNodo);
+		asigTamanio(obtTamanio() + 1);
+	}
+
 }

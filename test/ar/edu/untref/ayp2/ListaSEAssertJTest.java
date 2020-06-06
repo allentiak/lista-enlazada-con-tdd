@@ -100,6 +100,7 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(0);
 		miListaSEConCuatroElementos.insertarAlPrincipio(alfa);
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(1);
+		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
 		miListaSEConCuatroElementos.insertarAlFinal(beta);
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(2);
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
@@ -110,7 +111,7 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(4);
 		assertThat(miListaSEConCuatroElementos.obtPrimerElemento().equals(alfa)).isTrue();
-		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(gama)).isTrue();
+		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(delta)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(2).equals(gama)).isTrue();
