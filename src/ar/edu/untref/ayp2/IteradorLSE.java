@@ -22,6 +22,10 @@ public class IteradorLSE<CualquierTipo> {
 		return esValido() ? actual : null;
 	}
 
+	boolean esUltimoElemento() {
+		return (esValido() && (obtActual().obtSigte() == null));
+	}
+
 	void avanzar() {
 		if (!obtActual().esValido()) {
 			throw new NoSuchElementException();
@@ -30,7 +34,7 @@ public class IteradorLSE<CualquierTipo> {
 	}
 
 	void avanzarAlFinal() {
-		while (obtActual().esValido() && actual.obtSigte() != null) {
+		while (!esUltimoElemento()) {
 			this.avanzar();
 		}
 	}
