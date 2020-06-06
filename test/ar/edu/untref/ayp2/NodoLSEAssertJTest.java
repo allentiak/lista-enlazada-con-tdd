@@ -30,4 +30,15 @@ public class NodoLSEAssertJTest {
 		assertThat(miPrimerNodoNoVacio.obtSigte()).isEqualTo(miSegundoNodoNoVacio);
 	}
 
+	@Test
+	void debo_poder_encadenar_un_nodo_no_vacio_entre_otros_dos_nodos_no_vacios() {
+		NodoLSE<String> miPrimerNodoNoVacio = new NodoLSE<String>("Alfa");
+		NodoLSE<String> miSegundoNodoNoVacio = new NodoLSE<String>("Beta");
+		NodoLSE<String> miTercerNodoNoVacio = new NodoLSE<String>("Gama");
+		miSegundoNodoNoVacio.encadenarEntre(miPrimerNodoNoVacio, miTercerNodoNoVacio);
+		assertThat(miPrimerNodoNoVacio.obtSigte()).isEqualTo(miSegundoNodoNoVacio);
+		assertThat(miSegundoNodoNoVacio.obtSigte()).isEqualTo(miTercerNodoNoVacio);
+		assertThat(miTercerNodoNoVacio.obtSigte()).isNull();
+	}
+
 }
