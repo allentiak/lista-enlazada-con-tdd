@@ -37,4 +37,9 @@ public class NodoLSE<CualquierTipo> {
 		this.asigSigte(nodoAnterior.obtSigte());
 		nodoAnterior.asigSigte(this);
 	}
+
+	public void desenlazarSiguiente() {
+		this.asigSigte(this.obtSigte().obtSigte());
+	}
+
 }
