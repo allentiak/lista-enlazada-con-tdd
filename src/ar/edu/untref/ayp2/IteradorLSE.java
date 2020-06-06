@@ -40,6 +40,10 @@ public class IteradorLSE<CualquierTipo> {
 	}
 
 	void avanzarAPosicion(int posicionDeseada) {
+		if (posicionDeseada < 0) {
+			throw new NoSuchElementException();
+		}
+
 		for (int i = 0; i < posicionDeseada; i++) {
 			this.avanzar();
 		}

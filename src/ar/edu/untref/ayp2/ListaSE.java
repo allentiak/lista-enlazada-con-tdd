@@ -77,7 +77,7 @@ public class ListaSE<CualquierTipo> {
 	public void insertarAlFinal(CualquierTipo miNuevoElemento) {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
 		IteradorLSE<CualquierTipo> iterador = obtIterador();
-		iterador.avanzarAPosicion(obtTamanio() - 2);
+		iterador.avanzarAPosicion(obtTamanio() - 1);
 		miNuevoNodo.enlazarLuegoDe(iterador.obtActual());
 		asigTamanio(obtTamanio() + 1);
 	}
@@ -88,6 +88,36 @@ public class ListaSE<CualquierTipo> {
 		iterador.avanzarAPosicion(posicionDeseada - 1);
 		miNuevoNodo.enlazarLuegoDe(iterador.obtActual());
 		asigTamanio(obtTamanio() + 1);
+	}
+
+	public void eliminarPrimerElemento() {
+		if (cabeza.obtSigte() == null) {
+			throw new NoSuchElementException();
+		}
+		cabeza.desenlazarSiguiente();
+		asigTamanio(obtTamanio() - 1);
+	}
+
+	public void eliminarUltimoElemento() {
+		IteradorLSE<CualquierTipo> iterador = obtIterador();
+		iterador.avanzarAPosicion(obtTamanio() - 2);
+		iterador.obtActual().desenlazarSiguiente();
+		asigTamanio(obtTamanio() - 1);
+	}
+
+	public void eliminarEnPosicion(int posicionDeseada) {
+		if (posicionDeseada < 0 || cabeza.obtSigte() == null) {
+			throw new NoSuchElementException();
+		}
+		if (posicionDeseada == 0) {
+			cabeza.desenlazarSiguiente();
+		}
+		if (posicionDeseada > 0) {
+			IteradorLSE<CualquierTipo> iterador = obtIterador();
+			iterador.avanzarAPosicion(posicionDeseada - 1);
+			iterador.obtActual().desenlazarSiguiente();
+		}
+		asigTamanio(obtTamanio() - 1);
 	}
 
 }
