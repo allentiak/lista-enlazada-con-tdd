@@ -3,6 +3,11 @@
 Una implementación de Lista Enlazada libre, desarrollada desde cero mediante TDD (Test-Driven Development).
 
 
+## Diseño
+
+![Diagrama de Clases](DiagramaDeClases.png)
+
+
 ## Descargar
 
 https://github.com/allentiak/lista-enlazada-con-tdd
