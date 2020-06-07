@@ -6,40 +6,36 @@ public class IteradorLSE<CualquierTipo> {
 
 	private NodoLSE<CualquierTipo> actual;
 
-	IteradorLSE(NodoLSE<CualquierTipo> miNodo) {
+	public IteradorLSE(NodoLSE<CualquierTipo> miNodo) {
 		this.actual = miNodo;
 	}
 
-	IteradorLSE(CualquierTipo miElemento) {
-		this.actual = new NodoLSE<CualquierTipo>(miElemento);
-	}
-
-	boolean esValido() {
+	public boolean esValido() {
 		return (actual != null) ? actual.esValido() : false;
 	}
 
-	NodoLSE<CualquierTipo> obtActual() {
+	public NodoLSE<CualquierTipo> obtActual() {
 		return esValido() ? actual : null;
 	}
 
-	boolean esUltimoElemento() {
+	public boolean esUltimoElemento() {
 		return (esValido() && (obtActual().obtSigte() == null));
 	}
 
-	void avanzar() {
+	public void avanzar() {
 		if (!obtActual().esValido()) {
 			throw new NoSuchElementException();
 		}
 		this.actual = actual.obtSigte();
 	}
 
-	void avanzarAlFinal() {
+	public void avanzarAlFinal() {
 		while (!esUltimoElemento()) {
 			this.avanzar();
 		}
 	}
 
-	void avanzarAPosicion(int posicionDeseada) {
+	public void avanzarAPosicion(int posicionDeseada) {
 		if (posicionDeseada < 0) {
 			throw new NoSuchElementException();
 		}

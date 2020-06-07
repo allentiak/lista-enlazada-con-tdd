@@ -38,7 +38,7 @@ public class NodoLSE<CualquierTipo> {
 		nodoAnterior.asigSigte(this);
 	}
 
-	public void desenlazarSiguiente() {
+	public void desenlazarElSiguienteNodo() {
 		this.asigSigte(this.obtSigte().obtSigte());
 	}
 

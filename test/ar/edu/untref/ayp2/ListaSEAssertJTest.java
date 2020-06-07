@@ -80,7 +80,7 @@ public class ListaSEAssertJTest {
 		String beta = "Beta";
 		ListaSE<String> miListaSEConDosElementos = new ListaSE<String>(beta);
 		assertThat(miListaSEConDosElementos.obtTamanio()).isEqualTo(1);
-		miListaSEConDosElementos.insertarAlPrincipio(alfa);
+		miListaSEConDosElementos.insertarElementoAlPrincipio(alfa);
 		assertThat(miListaSEConDosElementos).isNotNull();
 		assertThat(miListaSEConDosElementos.estaVacia()).isFalse();
 		assertThat(miListaSEConDosElementos.obtTamanio()).isEqualTo(2);
@@ -98,15 +98,15 @@ public class ListaSEAssertJTest {
 		String delta = "Delta";
 		ListaSE<String> miListaSEConCuatroElementos = new ListaSE<String>();
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(0);
-		miListaSEConCuatroElementos.insertarAlPrincipio(alfa);
+		miListaSEConCuatroElementos.insertarElementoAlPrincipio(alfa);
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(1);
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
-		miListaSEConCuatroElementos.insertarAlFinal(beta);
+		miListaSEConCuatroElementos.insertarElementoAlFinal(beta);
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(2);
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
-		miListaSEConCuatroElementos.insertarEnPosicion(delta, 2);
-		miListaSEConCuatroElementos.insertarEnPosicion(gama, 2);
+		miListaSEConCuatroElementos.insertarElementoEnPosicion(delta, 2);
+		miListaSEConCuatroElementos.insertarElementoEnPosicion(gama, 2);
 		assertThat(miListaSEConCuatroElementos).isNotNull();
 		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(4);
@@ -125,10 +125,10 @@ public class ListaSEAssertJTest {
 		String gama = "Gama";
 		String delta = "Delta";
 		ListaSE<String> miListaSEConCuatroElementos = new ListaSE<String>();
-		miListaSEConCuatroElementos.insertarAlPrincipio(alfa);
-		miListaSEConCuatroElementos.insertarAlFinal(beta);
-		miListaSEConCuatroElementos.insertarEnPosicion(delta, 2);
-		miListaSEConCuatroElementos.insertarEnPosicion(gama, 2);
+		miListaSEConCuatroElementos.insertarElementoAlPrincipio(alfa);
+		miListaSEConCuatroElementos.insertarElementoAlFinal(beta);
+		miListaSEConCuatroElementos.insertarElementoEnPosicion(delta, 2);
+		miListaSEConCuatroElementos.insertarElementoEnPosicion(gama, 2);
 		miListaSEConCuatroElementos.eliminarUltimoElemento();
 		assertThat(miListaSEConCuatroElementos).isNotNull();
 		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
@@ -138,7 +138,7 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(alfa)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(1).equals(beta)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(2).equals(gama)).isTrue();
-		miListaSEConCuatroElementos.eliminarEnPosicion(1);
+		miListaSEConCuatroElementos.eliminarElementoEnPosicion(1);
 		assertThat(miListaSEConCuatroElementos).isNotNull();
 		assertThat(miListaSEConCuatroElementos.estaVacia()).isFalse();
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(2);
@@ -153,7 +153,7 @@ public class ListaSEAssertJTest {
 		assertThat(miListaSEConCuatroElementos.obtPrimerElemento().equals(gama)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtUltimoElemento().equals(gama)).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtElementoEnPosicion(0).equals(gama)).isTrue();
-		miListaSEConCuatroElementos.eliminarEnPosicion(0);
+		miListaSEConCuatroElementos.eliminarElementoEnPosicion(0);
 		assertThat(miListaSEConCuatroElementos).isNotNull();
 		assertThat(miListaSEConCuatroElementos.estaVacia()).isTrue();
 		assertThat(miListaSEConCuatroElementos.obtTamanio()).isEqualTo(0);
@@ -171,7 +171,7 @@ public class ListaSEAssertJTest {
 			miListaSEConCuatroElementos.eliminarUltimoElemento();
 		}, NoSuchElementException.class)).isNotNull();
 		assertThat(catchThrowableOfType(() -> {
-			miListaSEConCuatroElementos.eliminarEnPosicion(0);
+			miListaSEConCuatroElementos.eliminarElementoEnPosicion(0);
 		}, NoSuchElementException.class)).isNotNull();
 
 	}

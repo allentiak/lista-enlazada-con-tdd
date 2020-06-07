@@ -49,7 +49,7 @@ public class NodoLSEAssertJTest {
 		NodoLSE<String> miTercerNodoNoVacio = new NodoLSE<String>("Gama");
 		miSegundoNodoNoVacio.enlazarLuegoDe(miPrimerNodoNoVacio);
 		miTercerNodoNoVacio.enlazarLuegoDe(miSegundoNodoNoVacio);
-		miPrimerNodoNoVacio.desenlazarSiguiente();
+		miPrimerNodoNoVacio.desenlazarElSiguienteNodo();
 		assertThat(miPrimerNodoNoVacio.obtSigte()).isEqualTo(miTercerNodoNoVacio);
 		assertThat(miTercerNodoNoVacio.obtSigte()).isNull();
 	}

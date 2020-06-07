@@ -23,12 +23,12 @@ public class ListaSE<CualquierTipo> {
 		return tamanio;
 	}
 
-	public IteradorLSE<CualquierTipo> obtIterador() {
-		return new IteradorLSE<CualquierTipo>(cabeza.obtSigte());
+	private void asigTamanio(int nuevoTamanio) {
+		this.tamanio = nuevoTamanio;
 	}
 
-	public void asigTamanio(int tamanio) {
-		this.tamanio = tamanio;
+	public IteradorLSE<CualquierTipo> obtIterador() {
+		return new IteradorLSE<CualquierTipo>(cabeza.obtSigte());
 	}
 
 	public boolean estaVacia() {
@@ -68,13 +68,13 @@ public class ListaSE<CualquierTipo> {
 		return iterador.obtActual().obtDato();
 	}
 
-	public void insertarAlPrincipio(CualquierTipo miNuevoElemento) {
+	public void insertarElementoAlPrincipio(CualquierTipo miNuevoElemento) {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
 		miNuevoNodo.enlazarLuegoDe(cabeza);
 		asigTamanio(obtTamanio() + 1);
 	}
 
-	public void insertarAlFinal(CualquierTipo miNuevoElemento) {
+	public void insertarElementoAlFinal(CualquierTipo miNuevoElemento) {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
 		IteradorLSE<CualquierTipo> iterador = obtIterador();
 		iterador.avanzarAPosicion(obtTamanio() - 1);
@@ -82,7 +82,7 @@ public class ListaSE<CualquierTipo> {
 		asigTamanio(obtTamanio() + 1);
 	}
 
-	public void insertarEnPosicion(CualquierTipo miNuevoElemento, int posicionDeseada) {
+	public void insertarElementoEnPosicion(CualquierTipo miNuevoElemento, int posicionDeseada) {
 		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
 		IteradorLSE<CualquierTipo> iterador = obtIterador();
 		iterador.avanzarAPosicion(posicionDeseada - 1);
@@ -94,28 +94,28 @@ public class ListaSE<CualquierTipo> {
 		if (cabeza.obtSigte() == null) {
 			throw new NoSuchElementException();
 		}
-		cabeza.desenlazarSiguiente();
+		cabeza.desenlazarElSiguienteNodo();
 		asigTamanio(obtTamanio() - 1);
 	}
 
 	public void eliminarUltimoElemento() {
 		IteradorLSE<CualquierTipo> iterador = obtIterador();
 		iterador.avanzarAPosicion(obtTamanio() - 2);
-		iterador.obtActual().desenlazarSiguiente();
+		iterador.obtActual().desenlazarElSiguienteNodo();
 		asigTamanio(obtTamanio() - 1);
 	}
 
-	public void eliminarEnPosicion(int posicionDeseada) {
+	public void eliminarElementoEnPosicion(int posicionDeseada) {
 		if (posicionDeseada < 0 || cabeza.obtSigte() == null) {
 			throw new NoSuchElementException();
 		}
 		if (posicionDeseada == 0) {
-			cabeza.desenlazarSiguiente();
+			cabeza.desenlazarElSiguienteNodo();
 		}
 		if (posicionDeseada > 0) {
 			IteradorLSE<CualquierTipo> iterador = obtIterador();
 			iterador.avanzarAPosicion(posicionDeseada - 1);
-			iterador.obtActual().desenlazarSiguiente();
+			iterador.obtActual().desenlazarElSiguienteNodo();
 		}
 		asigTamanio(obtTamanio() - 1);
 	}
