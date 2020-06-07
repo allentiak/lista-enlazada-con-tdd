@@ -1,15 +1,15 @@
 package ar.edu.untref.ayp2;
 
-public class Nodo<CualquierTipo> {
+public class NodoLSE<CualquierTipo> {
 
 	private CualquierTipo dato;
-	private Nodo<CualquierTipo> sigte;
+	private NodoLSE<CualquierTipo> sigte;
 
-	public Nodo() {
+	public NodoLSE() {
 		this.asigDato(null);
 	}
 
-	public Nodo(CualquierTipo miDato) {
+	public NodoLSE(CualquierTipo miDato) {
 		this.asigDato(miDato);
 	}
 
@@ -21,11 +21,11 @@ public class Nodo<CualquierTipo> {
 		this.dato = nuevoDato;
 	}
 
-	public Nodo<CualquierTipo> obtSigte() {
+	public NodoLSE<CualquierTipo> obtSigte() {
 		return sigte;
 	}
 
-	public void asigSigte(Nodo<CualquierTipo> otroNodo) {
+	public void asigSigte(NodoLSE<CualquierTipo> otroNodo) {
 		this.sigte = otroNodo;
 	}
 

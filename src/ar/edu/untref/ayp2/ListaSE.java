@@ -2,17 +2,17 @@ package ar.edu.untref.ayp2;
 
 import java.util.NoSuchElementException;
 
-public class ListaSimplementeEnlazada<CualquierTipo> {
+public class ListaSE<CualquierTipo> {
 
-	private Nodo<CualquierTipo> cabeza = new Nodo<CualquierTipo>(null);
+	private NodoLSE<CualquierTipo> cabeza = new NodoLSE<CualquierTipo>(null);
 	private int tamanio;
 
-	public ListaSimplementeEnlazada(CualquierTipo miElemento) {
-		cabeza.asigSigte(new Nodo<CualquierTipo>(miElemento));
+	public ListaSE(CualquierTipo miElemento) {
+		cabeza.asigSigte(new NodoLSE<CualquierTipo>(miElemento));
 		asigTamanio(1);
 	}
 
-	public ListaSimplementeEnlazada() {
+	public ListaSE() {
 	}
 
 	public int obtTamanio() {

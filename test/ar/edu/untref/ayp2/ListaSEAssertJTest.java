@@ -6,18 +6,18 @@ import java.util.NoSuchElementException;
 
 import org.junit.jupiter.api.Test;
 
-public class ListaSimplementeEnlazadaAssertJTest {
+public class ListaSEAssertJTest {
 
 	@Test
 	void debo_poder_crear_una_lista_generica_vacia() {
-		ListaSimplementeEnlazada<Object> miListaSimplementeEnlazadaVacia = new ListaSimplementeEnlazada<Object>();
+		ListaSE<Object> miListaSimplementeEnlazadaVacia = new ListaSE<Object>();
 		assertThat(miListaSimplementeEnlazadaVacia).isNotNull();
 		assertThat(miListaSimplementeEnlazadaVacia.estaVacia()).isTrue();
 	}
 
 	@Test
 	void debo_poder_consultar_una_lista_generica_vacia() {
-		ListaSimplementeEnlazada<Object> miListaSimplementeEnlazadaVacia = new ListaSimplementeEnlazada<Object>();
+		ListaSE<Object> miListaSimplementeEnlazadaVacia = new ListaSE<Object>();
 		assertThat(miListaSimplementeEnlazadaVacia).isNotNull();
 		assertThat(miListaSimplementeEnlazadaVacia.estaVacia()).isTrue();
 		assertThat(miListaSimplementeEnlazadaVacia.obtTamanio()).isEqualTo(0);
@@ -64,14 +64,14 @@ public class ListaSimplementeEnlazadaAssertJTest {
 
 	@Test
 	void debo_poder_consultar_una_lista_generica_con_un_elemento() {
-		String miElemento = "Alfa";
-		ListaSimplementeEnlazada<String> miListaSimplementeEnlazadaConUnElemento = new ListaSimplementeEnlazada<String>(miElemento);
+		String alfa = "Alfa";
+		ListaSE<String> miListaSimplementeEnlazadaConUnElemento = new ListaSE<String>(alfa);
 		assertThat(miListaSimplementeEnlazadaConUnElemento).isNotNull();
 		assertThat(miListaSimplementeEnlazadaConUnElemento.estaVacia()).isFalse();
 		assertThat(miListaSimplementeEnlazadaConUnElemento.obtTamanio()).isEqualTo(1);
-		assertThat(miListaSimplementeEnlazadaConUnElemento.obtPrimerElemento()).isEqualTo(miElemento);
-		assertThat(miListaSimplementeEnlazadaConUnElemento.obtUltimoElemento()).isEqualTo(miElemento);
-		assertThat(miListaSimplementeEnlazadaConUnElemento.obtElementoEnPosicion(0)).isEqualTo(miElemento);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtPrimerElemento()).isEqualTo(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtUltimoElemento()).isEqualTo(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtElementoEnPosicion(0)).isEqualTo(alfa);
 	}
 
 }
