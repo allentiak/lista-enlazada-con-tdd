@@ -2,6 +2,8 @@
 
 Una implementación de Lista Enlazada libre, desarrollada desde cero mediante TDD (Test-Driven Development).
 
+Material complementario a la Clase de Listas Enlazadas de la Cátedra "[Algoritmos y Programación II](https://sites.google.com/untref.edu.ar/aypii/)", de la [Ingeniería en Computación](http://www.untref.edu.ar/carrera/ingenieria-en-computacion) de la [UNTREF](https://untref.edu.ar).
+
 
 ## Diseño
 
@@ -14,6 +16,8 @@ https://github.com/allentiak/lista-enlazada-con-tdd
 
 
 ## Uso
+
+[Video de la clase en YouTube](https://www.youtube.com/playlist?list=PLxr02vIjy-K__URKYLikt9kJ8AsHspkPs). (Licencia: [CC-BY](https://creativecommons.org/licenses/by/4.0/)).
 
 Se recomienda seguir el desarrollo con alguna herramienta como [Git-Time-Machine](https://github.com/littlebee/git-time-machine).
 
