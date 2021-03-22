@@ -12,7 +12,7 @@ Material complementario a la Clase de Listas Enlazadas de la Cátedra "[Algoritm
 
 ## Descargar
 
-https://github.com/allentiak/lista-enlazada-con-tdd
+https://github.com/untref-ayp2/estructuras--lista-enlazada-con-tdd
 
 
 ## Uso
@@ -31,7 +31,7 @@ Esta implementación fue inspirada por [la implementación de Lista Enlazada de 
 
 ## Licencia
 
-Copyright © 2020, Leandro Doctors.
+Copyleft © desde 2020, Leandro Doctors.
 
 Este programa es Software Libre: puede redistribuirse y/o modificarse
 bajo los términos de la Licencia General Pública Affero de GNU (GNU Affero General Public License), tal como la publica la Free Software Foundation (Fundación para el Software Libre), ya sea la versión 3 de la Licencia, o
