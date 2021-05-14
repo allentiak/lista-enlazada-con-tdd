@@ -31,13 +31,10 @@ Esta implementación fue inspirada por [la implementación de Lista Enlazada de 
 
 ## Licencia
 
-Copyleft © desde 2020, Leandro Doctors.
+Copyleft © 2018, 2021, Leandro Doctors.
 
-Este programa es Software Libre: puede redistribuirse y/o modificarse
-bajo los términos de la Licencia General Pública Affero de GNU (GNU Affero General Public License), tal como la publica la Free Software Foundation (Fundación para el Software Libre), ya sea la versión 3 de la Licencia, o
-(a tu elección) cualquier versión posterior.
+Este programa es Software Libre: puede redistribuirse y/o modificarse bajo los términos de la Licencia Apache, ya sea la versión 2 de la Licencia, o (a libre elección) cualquier versión posterior publicada por la Apache Software Foundation.
 
-Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; incluso sin la garantía implícita de 
-COMERCIABILIDAD o ADECUACIÓN PARA UN PROPÓSITO PARTICULAR. Leer la Licencia General Pública Affero de GNU para más detalles.
+Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; incluso sin la garantía implícita de COMERCIABILIDAD o ADECUACIÓN PARA UN PROPÓSITO PARTICULAR. Leer la Licencia Apache para más detalles.
 
-Deberías haber recibibido una copia de la Licencia General Pública Affero de GNU junto a este programa. Si no, ver <http://www.gnu.org/licenses/>.
+En este repo hay disponible una copia de la Licencia Apache. Si no, ver <http://www.apache.org/licenses/LICENSE-2.0>.
