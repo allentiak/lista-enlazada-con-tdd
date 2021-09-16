@@ -28,7 +28,10 @@ public class ListaSE<CualquierTipo> {
 	}
 
 	public IteradorLSE<CualquierTipo> obtIterador() {
-		return new IteradorLSE<CualquierTipo>(cabeza.obtSigte());
+		if (cabeza.obtSigte() != null) {
+			return new IteradorLSE<CualquierTipo>(cabeza.obtSigte());
+		}
+		return new IteradorLSE<CualquierTipo>(cabeza);
 	}
 
 	public boolean estaVacia() {
@@ -75,11 +78,17 @@ public class ListaSE<CualquierTipo> {
 	}
 
 	public void insertarElementoAlFinal(CualquierTipo miNuevoElemento) {
-		NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
-		IteradorLSE<CualquierTipo> iterador = obtIterador();
-		iterador.avanzarAPosicion(obtTamanio() - 1);
-		miNuevoNodo.enlazarLuegoDe(iterador.obtActual());
-		asigTamanio(obtTamanio() + 1);
+		// hack
+		if (obtTamanio() == 0) {
+			insertarElementoAlPrincipio(miNuevoElemento);
+		} else {
+
+			NodoLSE<CualquierTipo> miNuevoNodo = new NodoLSE<CualquierTipo>(miNuevoElemento);
+			IteradorLSE<CualquierTipo> iterador = obtIterador();
+			iterador.avanzarAPosicion(obtTamanio() - 1);
+			miNuevoNodo.enlazarLuegoDe(iterador.obtActual());
+			asigTamanio(obtTamanio() + 1);
+		}
 	}
 
 	public void insertarElementoEnPosicion(CualquierTipo miNuevoElemento, int posicionDeseada) {

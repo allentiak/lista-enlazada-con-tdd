@@ -75,6 +75,32 @@ public class ListaSEAssertJTest {
 	}
 
 	@Test
+	void debo_poder_insertarle_a_una_lista_vacia_un_elemento_al_principio() {
+		String alfa = "Alfa";
+		ListaSE<String> miListaSimplementeEnlazadaConUnElemento = new ListaSE<String>();
+		miListaSimplementeEnlazadaConUnElemento.insertarElementoAlPrincipio(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento).isNotNull();
+		assertThat(miListaSimplementeEnlazadaConUnElemento.estaVacia()).isFalse();
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtTamanio()).isEqualTo(1);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtPrimerElemento()).isEqualTo(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtUltimoElemento()).isEqualTo(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtElementoEnPosicion(0)).isEqualTo(alfa);
+	}
+
+	@Test
+	void debo_poder_insertarle_a_una_lista_vacia_un_elemento_al_final() {
+		String alfa = "Alfa";
+		ListaSE<String> miListaSimplementeEnlazadaConUnElemento = new ListaSE<String>();
+		miListaSimplementeEnlazadaConUnElemento.insertarElementoAlFinal(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento).isNotNull();
+		assertThat(miListaSimplementeEnlazadaConUnElemento.estaVacia()).isFalse();
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtTamanio()).isEqualTo(1);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtPrimerElemento()).isEqualTo(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtUltimoElemento()).isEqualTo(alfa);
+		assertThat(miListaSimplementeEnlazadaConUnElemento.obtElementoEnPosicion(0)).isEqualTo(alfa);
+	}
+
+	@Test
 	void debo_poder_consultar_una_lista_generica_con_dos_elementos__el_segundo_instertado_al_principio() {
 		String alfa = "Alfa";
 		String beta = "Beta";
