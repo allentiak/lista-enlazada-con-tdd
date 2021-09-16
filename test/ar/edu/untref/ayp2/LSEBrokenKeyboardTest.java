@@ -44,6 +44,8 @@ public class LSEBrokenKeyboardTest {
 
 		assertThat(LSEBrokenKeyboard.convertirListaASalida(lista1Esperada)).isEqualTo(salida1);
 
+		assertThat(LSEBrokenKeyboard.convertirListaASalida(LSEBrokenKeyboard.convertirEntradaALista(entrada1))).isEqualTo(salida1);
+
 	}
 
 	@Test
@@ -66,6 +68,8 @@ public class LSEBrokenKeyboardTest {
 //		assertThat(lista2Convertida).isEqualTo(lista2Esperada);
 
 		assertThat(LSEBrokenKeyboard.convertirListaASalida(lista2Esperada)).isEqualTo(salida2);
+
+		assertThat(LSEBrokenKeyboard.convertirListaASalida(LSEBrokenKeyboard.convertirEntradaALista(entrada2))).isEqualTo(salida2);
 
 	}
 
